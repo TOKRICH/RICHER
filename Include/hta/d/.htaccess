@@ -1,0 +1,19 @@
+RewriteEngine On
+RewriteCond %{http_host} ^sem-cms.com [NC]
+RewriteRule ^(.*)$ http://www.sem-cms.com/$1 [L,R=301]
+
+<Files ~ “^.(htaccess|htpasswd)$”>
+deny from all
+</Files>
+RewriteRule  ^ajax.php$  <{dirpaths}>Templete/<{Template}>/Include/ajax\.php
+RewriteRule  ^product.php$  <{dirpaths}>Templete/<{Template}>/Include/product\.php
+RewriteRule  ^about.php$  <{dirpaths}>Templete/<{Template}>/Include/about\.php
+RewriteRule  ^contact.php$  <{dirpaths}>Templete/<{Template}>/Include/contact\.php
+RewriteRule  ^download.php$  <{dirpaths}>Templete/<{Template}>/Include/download\.php
+RewriteRule  ^news.php$  <{dirpaths}>Templete/<{Template}>/Include/news\.php
+RewriteRule  ^info.php$  <{dirpaths}>Templete/<{Template}>/Include/info\.php
+RewriteRule  ^view.php$  <{dirpaths}>Templete/<{Template}>/Include/view\.php
+RewriteRule  ^search.php$  <{dirpaths}>Templete/<{Template}>/Include/search\.php
+RewriteRule  ^404.html$  <{dirpaths}>Templete/<{Template}>/Include/404\.php
+
+ErrorDocument 404 /404.html

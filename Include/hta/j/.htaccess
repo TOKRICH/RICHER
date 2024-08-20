@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteCond %{http_host} ^sem-cms.com [NC]
+RewriteRule ^(.*)$ http://www.sem-cms.com/$1 [L,R=301]
+
+<Files ~ “^.(htaccess|htpasswd)$”>
+deny from all
+</Files>
+
+RewriteRule  ^product/$  <{dirpaths}>Templete/<{Template}>/Include/product\.php
+RewriteRule  ^([0-9,a-z,A-Z,\s,-]*)/$  <{dirpaths}>Templete/<{Template}>/Include/product\.php?ID=$1
+RewriteRule  ^product_([\d]*)/$  <{dirpaths}>Templete/<{Template}>/Include/product\.php?page=$1
+RewriteRule  ^([0-9,a-z,A-Z,\s,-]*)_([\d]*)/$  <{dirpaths}>Templete/<{Template}>/Include/product\.php?ID=$1&page=$2
+RewriteRule  ^([0-9,a-z,A-Z,-]*)\.html$  <{dirpaths}>Templete/<{Template}>/Include/view\.php?ID=$1
+RewriteRule  ^about/([0-9,a-z,A-Z,-]*).html$  <{dirpaths}>Templete/<{Template}>/Include/about\.php?ID=$1
+RewriteRule  ^nav/contact.html$  <{dirpaths}>Templete/<{Template}>/Include/contact.php
+RewriteRule  ^nav/download.html$  <{dirpaths}>Templete/<{Template}>/Include/download.php
+RewriteRule  ^news/list/$ <{dirpaths}>Templete/<{Template}>/Include/news\.php
+RewriteRule  ^news/list_([\d]*)/$ <{dirpaths}>Templete/<{Template}>/Include/news\.php?page=$1
+RewriteRule  ^news/([0-9,a-z,A-Z,-]*)/$ <{dirpaths}>Templete/<{Template}>/Include/news\.php?ID=$1
+RewriteRule  ^news/([0-9,a-z,A-Z,-]*)_([\d]*)/$ <{dirpaths}>Templete/<{Template}>/Include/news\.php?ID=$1&page=$2
+RewriteRule  ^news/([0-9,a-z,A-Z,-]*)\.html$ <{dirpaths}>Templete/<{Template}>/Include/info\.php?ID=$1
+RewriteRule  ^search.php$  <{dirpaths}>Templete/<{Template}>/Include/search\.php
+RewriteRule  ^ajax.php$  <{dirpaths}>Templete/<{Template}>/Include/ajax\.php
+ErrorDocument 404 /Error.html
