@@ -1,3 +1,13 @@
+/* 这是一个单行注释 */
+p {
+  color: blue; /* 这里的颜色设置为蓝色 */
+}
+
+/* 
+这是一个多行注释的例子，
+它可以跨越多行。
+*/
+
 *{ margin:0;padding:0;font-size: 14px;word-break: break-word;font-family: 'Philosopher-Regular-4'; }
 .left{ float: left; }
 .right{ float:right; }
